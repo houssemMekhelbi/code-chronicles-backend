@@ -1,0 +1,36 @@
+quarkus:
+# Properties that configure the Swagger documentation and Swagger UI
+  smallrye-openapi:
+    path: /api-docs
+    info-version: 1.0
+    info-description: Code Chronicles REST api Documentation
+    info-contact-email: contact@houssemmekhelbi.com
+    info-contact-name: Houssem Mekhelbi
+    info-contact-url: https://www.houssemmekhelbi.com#contact
+  swagger-ui:
+    path: /api-docs-ui
+# Properties that configure the JDBC data source driver of PostgreSQL data source
+  datasource:
+    reactive:
+      url: vertx-reactive:postgresql://localhost/jackiedb
+#    jdbc:
+#      max-size: 16
+#      url: jdbc:postgresql://localhost:5432/jackiedb
+    db-kind: postgresql
+    username: jackie
+    password: jackie
+  hibernate-orm:
+    database:
+      generation: drop-and-create
+#DigitalOcean Storage Access Configuration
+  s3:
+    endpoint-override: https://fra1.digitaloceanspaces.com
+    aws:
+      region: eu-central-1
+      credentials:
+        type: static
+        static-provider:
+          access-key-id: DO00EA9W9BP6BLF2DFMP
+          secret-access-key: Ho2z9aP/YnXKQG8Vs6eFDipQixf3cbusxTpYIp1q1Z0
+bucket:
+  name: code-chronicles
