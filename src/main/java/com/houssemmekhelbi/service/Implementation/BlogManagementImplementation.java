@@ -24,7 +24,6 @@ public class BlogManagementImplementation implements BlogManagement {
      *
      * @return A Uni emitting a list of blog objects.
      * If no blogs are found, fails with NotFoundException.
-     * If an error occurs during retrieval, fails with RetrievalException.
      */
     @Override
     public Uni<List<Blog>> retrieveAllBlogs() {
@@ -33,9 +32,8 @@ public class BlogManagementImplementation implements BlogManagement {
                 .onItem()
                 .ifNull()
                 .failWith(() -> new NotFoundException("No blogs found"))
-                .onFailure()
-                .recoverWithUni(error -> Uni.createFrom()
-                        .failure(new RetrievalException("Error retrieving blogs")));
+                .onItem()
+                .transformToUni(list -> list.isEmpty() ? Uni.createFrom().failure(new NotFoundException("No blogs found")) : Uni.createFrom().item(list));
     }
 
     /**
