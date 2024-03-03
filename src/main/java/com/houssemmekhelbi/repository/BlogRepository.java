@@ -1,10 +1,9 @@
 package com.houssemmekhelbi.repository;
 
-import com.houssemmekhelbi.model.Service;
+import com.houssemmekhelbi.model.Blog;
 import io.quarkus.hibernate.reactive.panache.PanacheRepository;
 import jakarta.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
-public class ServiceRepository implements PanacheRepository<Service> {
-
+public class BlogRepository implements PanacheRepository<Blog> {
 }

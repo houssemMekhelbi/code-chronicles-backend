@@ -1,6 +1,6 @@
 package com.houssemmekhelbi.utils;
 
-import com.houssemmekhelbi.model.secondaryModels.FileObject;
+import com.houssemmekhelbi.model.FileObject;
 import io.vertx.core.buffer.Buffer;
 import software.amazon.awssdk.services.s3.model.ListObjectsResponse;
 

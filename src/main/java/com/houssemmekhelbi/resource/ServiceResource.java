@@ -1,9 +1,8 @@
 package com.houssemmekhelbi.resource;
 
-import com.houssemmekhelbi.model.mainModels.Service;
+import com.houssemmekhelbi.model.Service;
 import com.houssemmekhelbi.model.payload.ServiceRequest;
-import com.houssemmekhelbi.service.ServiceManagement;
-import io.quarkus.hibernate.reactive.panache.common.WithSession;
+import com.houssemmekhelbi.service.Interface.ServiceManagement;
 import io.quarkus.hibernate.reactive.panache.common.WithTransaction;
 import io.smallrye.mutiny.Uni;
 import jakarta.inject.Inject;
@@ -11,7 +10,7 @@ import jakarta.ws.rs.*;
 
 import java.util.List;
 
-@Path("/services")
+@Path("/service")
 @WithTransaction
 public class ServiceResource {
     @Inject
@@ -42,7 +41,7 @@ public class ServiceResource {
 
     @DELETE
     @Produces("application/json")
-    public Uni<Boolean> deleteService(Service service){
-        return serviceManagement.deleteService(service);
+    public Uni<Boolean> deleteService(long service_id){
+        return serviceManagement.deleteService(service_id);
     }
 }

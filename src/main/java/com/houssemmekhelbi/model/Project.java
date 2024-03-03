@@ -1,4 +1,4 @@
-package com.houssemmekhelbi.model.mainModels;
+package com.houssemmekhelbi.model;
 
 import jakarta.persistence.*;
 

@@ -1,4 +1,4 @@
-package com.houssemmekhelbi.model.secondaryModels;
+package com.houssemmekhelbi.model;
 
 import software.amazon.awssdk.services.s3.model.S3Object;
 
