@@ -13,9 +13,6 @@ quarkus:
   datasource:
     reactive:
       url: vertx-reactive:postgresql://localhost/jackiedb
-#    jdbc:
-#      max-size: 16
-#      url: jdbc:postgresql://localhost:5432/jackiedb
     db-kind: postgresql
     username: jackie
     password: jackie
